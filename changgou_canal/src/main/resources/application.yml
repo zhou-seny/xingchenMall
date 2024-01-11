@@ -1,0 +1,17 @@
+server:
+  port: 9010
+spring:
+  application:
+    name: canal
+  rabbitmq:
+    host: 192.168.137.61
+    username: admin
+    password: admin
+
+canal:
+  client:
+    instances:
+      example:
+        host: 192.168.137.61
+        port: 11111
+        batch-size: 1000

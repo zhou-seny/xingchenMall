@@ -11,7 +11,9 @@ spring:
   main:
     allow-bean-definition-overriding: true #当遇到同样名字的时候，是否允许覆盖注册
   rabbitmq:
-    host: 192.168.211.132
+    host: 192.168.137.61
+    username: admin
+    password: admin
 eureka:
   client:
     service-url:

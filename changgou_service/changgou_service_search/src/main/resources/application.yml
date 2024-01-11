@@ -4,15 +4,18 @@ spring:
   application:
     name: search
   rabbitmq:
-    host: 192.168.211.132
+    host: 192.168.137.61
+    username: admin
+    password: admin
   redis:
-    host: 192.168.211.132
+    host: 192.168.137.61
+    password: 123456
   main:
     allow-bean-definition-overriding: true #当遇到同样名字的时候，是否允许覆盖注册
   data:
     elasticsearch:
       cluster-name: elasticsearch
-      cluster-nodes: 192.168.211.132:9300
+      cluster-nodes: 192.168.137.61:9300
   thymeleaf:
     cache: false
 eureka:
