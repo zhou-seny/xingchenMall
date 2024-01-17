@@ -31,8 +31,9 @@ spring:
           filters:
             - StripPrefix= 1
   redis:
-    host: 192.168.211.132
+    host: 192.168.137.61
     port: 6379
+    password: 123456
 server:
   port: 9101
 eureka:
