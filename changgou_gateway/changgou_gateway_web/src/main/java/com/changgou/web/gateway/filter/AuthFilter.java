@@ -26,14 +26,14 @@ public class AuthFilter implements GlobalFilter, Ordered {
 
         //1.判断当前请求路径是否为登录请求,如果是,则直接放行
         String path = request.getURI().getPath();
-        if ("/api/oauth/login".equals(path) || !UrlFilter.hasAuthorize(path) ){
+        if ("/api/oauth/login".equals(path) || !UrlFilter.hasAuthorize(path)) {
             //直接放行
             return chain.filter(exchange);
         }
 
         //2.从cookie中获取jti的值,如果该值不存在,拒绝本次访问
         String jti = authService.getJtiFromCookie(request);
-        if (StringUtils.isEmpty(jti)){
+        if (StringUtils.isEmpty(jti)) {
             //拒绝访问
             response.setStatusCode(HttpStatus.UNAUTHORIZED);
             return response.setComplete();
@@ -41,14 +41,14 @@ public class AuthFilter implements GlobalFilter, Ordered {
 
         //3.从redis中获取jwt的值,如果该值不存在,拒绝本次访问
         String jwt = authService.getJwtFromRedis(jti);
-        if (StringUtils.isEmpty(jwt)){
+        if (StringUtils.isEmpty(jwt)) {
             //拒绝访问
             response.setStatusCode(HttpStatus.UNAUTHORIZED);
             return response.setComplete();
         }
 
         //4.对当前的请求对象进行增强,让它会携带令牌的信息
-        request.mutate().header("Authorization","Bearer "+jwt);
+        request.mutate().header("Authorization", "Bearer " + jwt);
         return chain.filter(exchange);
     }
 
