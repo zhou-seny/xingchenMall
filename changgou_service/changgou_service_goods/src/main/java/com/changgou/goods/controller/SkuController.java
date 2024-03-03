@@ -41,7 +41,7 @@ public class SkuController {
         return new Result(true,StatusCode.OK,"查询成功",sku);
     }
 
-
+ 
     /***
      * 新增数据
      * @param sku
