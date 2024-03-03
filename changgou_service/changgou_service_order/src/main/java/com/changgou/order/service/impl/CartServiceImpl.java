@@ -43,6 +43,10 @@ public class CartServiceImpl implements CartService {
         if (orderItem != null){
             // 购物车中有该数据，更新购物车中信息
             orderItem.setNum(orderItem.getNum() + num);
+            if (orderItem.getNum() + num <= 0){
+                redisTemplate.boundHashOps(CART + username).delete(skuId);
+                return;
+            }
             orderItem.setMoney(orderItem.getNum() * orderItem.getPrice());
             orderItem.setPayMoney(orderItem.getNum() * orderItem.getPrice());
         } else {

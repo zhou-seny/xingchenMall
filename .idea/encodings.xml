@@ -55,7 +55,9 @@
     <file url="file://$PROJECT_DIR$/changgou_service_api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_user_oauth/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/changgou_web/changgou_web_order/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/changgou_web/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
